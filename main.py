@@ -3,7 +3,7 @@ from user import User
 from flask import Flask
 
 # creating a new user, the information that the user gives will be stored inside the specific user instance of User class
-user1 = User('Akanksha Nehete', '299 E Craig Street, Tallulah, LA', '+16477676905')
+user1 = User('Akanksha Nehete', '5446 Tasha Drive, Mississauga, ON', '+16477676905')
 
 
 app = Flask(__name__)
