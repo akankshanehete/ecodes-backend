@@ -9,7 +9,7 @@ class WeatherTexter:
     def __init__(self, user: User):
         self.user = user
         self.params = {
-            'key': GEOCODING_KEY,
+            'key': GOOGLE_API_KEY,
             'address': self.user.address
         }
         # API endpoint for Google Geolocation

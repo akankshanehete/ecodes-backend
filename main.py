@@ -6,7 +6,6 @@ from flask import Flask
 user1 = User('Akanksha Nehete', '299 E Craig Street, Tallulah, LA', '+16477676905')
 
 
-
 app = Flask(__name__)
 
 # home route (displaying the home page)
