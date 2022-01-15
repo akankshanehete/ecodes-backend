@@ -1,16 +1,15 @@
-import requests, os
+# importing file containing API authentication variables
+import requests, apitokens
 from twilio.rest import Client
 from user import User
-import apitokens
+
 
 # figure out a way to store these keys as environment variables cause its not working rn
 
 # openweather API information
 APP_ID = apitokens.APP_ID
-
 # Geocoding API information
 GEOCODING_KEY = apitokens.GEOCODING_KEY
-
 # twilio account information
 ACCOUNT_SID = apitokens.ACCOUNT_SID
 AUTH_TOKEN = apitokens.AUTH_TOKEN
@@ -26,13 +25,13 @@ class WeatherTexter:
         self.location_data = requests.get(url='https://maps.googleapis.com/maps/api/geocode/json?',
                                           params=self.params).json()
         # accessing the user's coordinates using their address so it can be fed into the weather application
-        self.lat = self.location_data['results'][0]['geometry']['location']['lat']
-        self.lng = self.location_data['results'][0]['geometry']['location']['lng']
+        self.addr_lat = self.location_data['results'][0]['geometry']['location']['lat']
+        self.addr_lng = self.location_data['results'][0]['geometry']['location']['lng']
 
         self.weather_apiparams = {
             'appid': APP_ID,
-            'lon': self.lng,
-            'lat': self.lat,
+            'lon': self.addr_lng,
+            'lat': self.addr_lat,
             'units': 'metric',
             'exclude': 'current,minutely,daily'
         }
