@@ -1,18 +1,9 @@
 # importing file containing API authentication variables
-import requests, apitokens
+import requests
 from twilio.rest import Client
 from user import User
+from apitokens import *
 
-
-# figure out a way to store these keys as environment variables cause its not working rn
-
-# openweather API information
-APP_ID = apitokens.APP_ID
-# Geocoding API information
-GEOCODING_KEY = apitokens.GEOCODING_KEY
-# twilio account information
-ACCOUNT_SID = apitokens.ACCOUNT_SID
-AUTH_TOKEN = apitokens.AUTH_TOKEN
 
 class WeatherTexter:
     def __init__(self, user: User):

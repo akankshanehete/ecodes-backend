@@ -1,13 +1,10 @@
 from weathertexter import WeatherTexter
 from user import User
 from flask import Flask
-from datetime import datetime
 
 # creating a new user, the information that the user gives will be stored inside the specific user instance of User class
 user1 = User('Akanksha Nehete', '299 E Craig Street, Tallulah, LA', '+16477676905')
-weathertexter = WeatherTexter(user1)
-bus = weathertexter.should_take_bus()
-weathertexter.text_user()
+
 
 
 app = Flask(__name__)
@@ -40,4 +37,4 @@ def portfolio():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    # activating debug mode will reload the server
+    # activating debug mode will reload the server automatically
